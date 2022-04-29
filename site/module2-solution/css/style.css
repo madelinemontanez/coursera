@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
 }
 
 h1 {
@@ -8,6 +10,7 @@ h1 {
 }
 
 p {
+  clear:both;
   background-color: #f0f0f0;
   height: fit-content;
   min-height:150px;
@@ -17,20 +20,18 @@ p {
   margin-left: auto;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #000000;
-
 }
 
 h2{
   background-color: #ffb4b4;
+  text-align: center;
+  border-bottom: 1px solid #000000;
+  border-left:1px solid #000000;
   margin:0px;
   height:30px;
-  float:right;
-  text-align: center;
   width:150px;
-  border-bottom: 2px solid #000000;
-  border-left:2px solid #000000;
+  position: absolute;
+  right: 0;
 }
 .Pineapple{
   background-color: #fffb9f;
@@ -38,57 +39,67 @@ h2{
 .Orange{
   background-color: #ffd398;
 }
-/*Large Screen*/
-@media (min-width: 1200px) {
+
+/*Desktop: if the width of the browser window is 992px and above*/
+@media (min-width: 992px) {
   .col-lg-1, .col-lg-2, .col-lg-3 {
     float: left;
     margin: 12px;
-    border: 2px solid black;
+    border: 1px solid #000000;
+    position: relative;
   }
 
+  /* In the desktop view, each of the 3 secs should take up equal amount of space.*/
   .col-lg-1 {
-    width: calc(33.33% - 28px);  /*percent minus the margin & border (12 + 12 + 2 + 2)px */
+    width: calc(33.33% - 26px);  /*percent minus the margin & border */
   }
   .col-lg-2 {
-    width: calc(33.33% - 28px);
+    width: calc(33.33% - 26px);
   }
   .col-lg-3 {
-    width: calc(33.33% - 28px);
+    width: calc(33.33% - 26px);
   }
 }
 
-/*Medium Screen*/
-@media (min-width: 992px) and (max-width: 1199px) {
+/*Tablet: if the width of the browser window is between 768px and 991px*/
+@media (min-width: 768px) and (max-width: 991px) {
   .col-md-1, .col-md-2, .col-md-3 {
     float: left;
     margin: 12px;
-    border: 2px solid black;
+    border: 1px solid #000000;
+    position: relative;
   }
 
+/*In the tablet view, the first 2 secs should be in the first row and be of equal size.
+The 3rd sec should be in the second row and take up the entire row by itself.*/
   .col-md-1 {
-    width: calc(50% - 28px);
+    width: calc(50% - 26px);
   }
   .col-md-2 {
-    width: calc(50% - 28px);
+    width: calc(50% - 26px);
   }
   .col-md-3 {
-    width: calc(100% - 28px);
+    width: calc(100% - 26px);
   }
 }
 
-@media (max-width: 991px) {
+/*Mobile: if the width of the browser is equal to or less than 767px*/
+@media (max-width: 767px) {
   .col-lg-1, .col-lg-2, .col-md-3 {
     margin: 12px;
     overflow:hidden;
-    border: 2px solid black;
+    border: 1px solid #000000;
+    position: relative;
   }
+
+  /*In the mobile view, each section should take up the entire row.*/
   .col-md-1 {
-    width: calc(100% - 28px);
+    width: calc(100% - 26px);
   }
   .col-md-2 {
-    width: calc(100% - 28px);
+    width: calc(100% - 26px);
   }
   .col-md-3 {
-    width: calc(100% - 28px);
+    width: calc(100% - 26px);
   }
 }
